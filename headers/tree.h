@@ -11,5 +11,7 @@
 
     void print_tree(Tree *t);
     int search(Tree *t, int val);
+    int getTreeLength(Tree *t);
+    Tree* removeNode(Tree *t, int val);
 
 #endif
