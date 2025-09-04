@@ -27,9 +27,9 @@ void print_tree(Tree *t) {
     }
 }
 
-int search(Tree *t, int val) {
+Tree* search(Tree *t, int val) {
     if (t == NULL) {
-        return 0;
+        return NULL;
     }
     if (val < t->info) {
         search(t->left, val);
@@ -38,7 +38,7 @@ int search(Tree *t, int val) {
         search(t->right, val);
     }
     else {
-        return 1;
+        return t;
     }
 
 }
@@ -85,4 +85,31 @@ Tree* removeNode(Tree *t, int val) {
     }
 
     return t;
+}
+
+int treeHeight(Tree *t) {
+    if (t == NULL || t->right == NULL && t->left == NULL) {
+        return 0;
+    }
+
+    int left_nodes = 1 + treeHeight(t->left);
+    int right_nodes = 1 + treeHeight(t->right);
+
+    if (left_nodes > right_nodes) {
+        return left_nodes;
+    }
+    else {
+        return right_nodes;
+    }
+}
+
+int heightSubTree(Tree *t, int val) {
+    Tree *subTree = search(t, val);
+
+    if (subTree) {
+        return treeHeight(subTree);
+    }
+    else {
+        return -1;
+    }
 }

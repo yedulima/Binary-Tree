@@ -10,8 +10,10 @@
     Tree* insert(Tree *t, int val);
 
     void print_tree(Tree *t);
-    int search(Tree *t, int val);
+    Tree* search(Tree *t, int val);
     int getTreeLength(Tree *t);
     Tree* removeNode(Tree *t, int val);
+    int treeHeight(Tree *t);
+    int heightSubTree(Tree *t, int val);
 
 #endif

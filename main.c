@@ -15,14 +15,16 @@ int main() {
     tree = insert(tree, 85);
 
     print_tree(tree);
+    printf("\nRoot node: %d\n", tree->info);
 
-    printf("\nTamanho da arvore: %d\n", getTreeLength(tree));
+    printf("\nTree lenght: %d\n", getTreeLength(tree));
 
-    tree = removeNode(tree, 250);
+    tree = removeNode(tree, 500);
 
     print_tree(tree);
+    printf("\nRoot node: %d\n", tree->info);
 
-    printf("\nTamanho da arvore: %d\n", getTreeLength(tree));
+    printf("\nTree lenght: %d\n", getTreeLength(tree));
 
     return 0;
 }
